@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PM Quiz !</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body{
+	font-family: arial;
+}
+	#test{
+		width: 500px;
+		margin: 50px auto;
+		margin-bottom: 200px;
+	}
+	#test_status{
+		width: 500px;
+		margin: auto;
+		align:center;
+	}
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+    ["Quel est le type de site de PART-medi? Est que c'est un site :", "Actualités", "Humoristique", "De paries en ligne", "B"],
+    ["Qui est le créateur du nom PartMedia ?", "Younes", "Rym", "Kenza", "A"],
+    ["Quelle est la couleur principale de PartMedia ?", "Orange", "Vert", "Bleu", "C"],
+    ["En combien de temps PartMedia à été fait ?", "2 semaines", "2 jours", "2 heures", "A"],
+    ["PartMedia à été fait en :", "2006", "2019" , "2727", "B"]
+	];
+		function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>Tu as "+correct+" questions correctes sur "+questions.length+" questions </h2>";
+		_("test_status").innerHTML = "FIN DE QUIZZ";
+		pos = 0;
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" sur "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>Suivant !</button>";
+}
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+window.addEventListener("load", renderQuestion, false);
+</script>
+</head>
+
+
+
+
+<body>
+	<div id="bloc-page">
+        <header>
+            <div id="titre-principal">
+                <div id="logo">
+                   <p><img src="Capture.JPG" class="imageflottante" alt="le logo de mon site"/></p></br>
+                </div>
+                <p><h1>PartMédia</h1></p>
+            </div>
+    </div>
+
+    <nav>
+        <ul classe="barre">
+             
+            <li class="deroulant"> <a class="quizzz" href="index.html"> <strong>Actualités</strong></a>
+                <ul class="sous">
+                    <li><a href="menu/actualites/international/international.html">International</a></li>
+                    <li><a href="menu/actualites/politique/politique.html">Politique</a></li>
+                    <li><a href="menu/actualites/sport/sport.html">Sport</a></li>
+                    <li><a href="menu/actualites/sciences/sciences.html">Sciences</a></li>
+                </ul>
+            </li>
+            <li class="deroulant"> <a class="quizzz" href="index.html"> <strong>Economie Société</strong></a>
+                <ul class="sous">
+                    <li><a href="menu/economie-societe/societe/societe.html">Société </a></li>
+                    <li><a href="menu/economie-societe/economie.html">Economie </a></li>
+
+                </ul>
+            </li>
+
+            <li class="deroulant"> <a class="quizzz"  href="index.html"> <strong>Culture</strong></a>
+                <ul class="sous">
+                    <li><a href="menu/culture/cinema/cinema.html">Cinéma</a></li>
+                    <li><a href="menu/culture/litterature/litterature.html">Littérature</a></li>
+                    <li><a href="menu/culture/musique/musique.html">Musiques</a></li>
+                    <li><a href="menu/culture/tv/tv.html">TV</a></li>
+                </ul>
+            </li>
+
+
+            <li class="deroulant">
+                <a class="quizzz" href="quizzz.html" >Quizz</a></li>
+        </ul>
+    </nav>
+
+        <br><br><br><br>
+
+
+    <h2 id="test_status"></h2>
+    <fieldset id="test"></fieldset>
+</body>
+
+<hr>
+
+<footer class='footerbottom'>
+ 
+      <center><div class='contentfooter'>Copyright &#169; 2019 Younes Kenza Rym  | <a href='index.html'> Contactez-nous ! </a> </div> </center>
+
+ 
+
+</footer>
+</html>
