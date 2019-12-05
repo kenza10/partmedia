@@ -63,9 +63,9 @@ h2
      background-color: white;
      text-align: center;
      align-content: center;
-     margin: 150px;
+     margin: 0 auto;
      border: solid;
-     border-color: rgb(130, 201, 231);
+     border-color: rgba(130, 201, 231,0.3);
  }
  nav
  {
@@ -95,7 +95,7 @@ h2
  }
  nav a
  {
-     display: block;
+     display: block; 
      text-decoration: none;
      color: black;
      border-bottom: 2px solid white;
@@ -154,7 +154,7 @@ h2
      float: left;
      width: 23%;
      text-align: center;
-     position: relatiy   ve;
+     position: relative;
  }
  #titre-principal
  {
@@ -164,7 +164,7 @@ h2
 
 #milieu
 {
-    background-image: url(fondd.jpg);
+    background-image: url(essai1.jpg);
     margin-top: 150px;
     padding-bottom: 450px;
 }
@@ -193,7 +193,7 @@ h2
 
 .deroulant
 {
-    background-color: white;
+    background-color:white;
     padding-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -205,7 +205,7 @@ h2
 }
 html
 {
-    background-image: url('./FOND.jpg');
+    background-image: url('./essai1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 } 
@@ -222,4 +222,11 @@ body
     flex-wrap: wrap;
     justify-content: center;
     
+}
+.quizzz
+{
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+   width: 100%;
+   height: 85%;
 }
